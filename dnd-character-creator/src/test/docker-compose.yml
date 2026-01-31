@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: dnd_postgres
+    environment:
+      POSTGRES_DB: dnd_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+
+  redis-cache:
+    image: redis:7-alpine
+    container_name: dnd_redis
+    ports:
+      - "6379:6379"
